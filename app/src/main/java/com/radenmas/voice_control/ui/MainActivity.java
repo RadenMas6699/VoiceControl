@@ -19,10 +19,10 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 public class MainActivity extends BaseActivity {
-    private ImageView imgAC, imgLamp1, imgFan, imgRefrigerator, imgLamp2,
-            stateAC, stateLamp1, stateFan, stateRefrigerator, stateLamp2;
-    private ImageButton imgBtnVoice, switchAC, switchLamp1, switchFan, switchRefrigerator, switchLamp2;
-    int ac, lamp1, fan, refrigerator, lamp2;
+    private ImageView imgAC, imgLamp1, imgFan, imgRefrigerator, imgLamp2, imgWashing,
+            stateAC, stateLamp1, stateFan, stateRefrigerator, stateLamp2, stateWashing;
+    private ImageButton imgInfo, imgBtnVoice, switchAC, switchLamp1, switchFan, switchRefrigerator, switchLamp2, switchWashing;
+    int ac, lamp1, fan, refrigerator, lamp2, washing;
 
     @Override
     protected int getLayoutResource() {
@@ -40,17 +40,21 @@ public class MainActivity extends BaseActivity {
         dbReff.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String strAC = snapshot.child("ac").getValue().toString();
-                String strLamp1 = snapshot.child("lampu_1").getValue().toString();
-                String strFan = snapshot.child("fan").getValue().toString();
-                String strKulkas = snapshot.child("refrigerator").getValue().toString();
-                String strLamp2 = snapshot.child("lampu_2").getValue().toString();
+                if (snapshot.exists()) {
+                    String strAC = snapshot.child("ac").getValue().toString();
+                    String strLamp1 = snapshot.child("lampu_1").getValue().toString();
+                    String strFan = snapshot.child("fan").getValue().toString();
+                    String strKulkas = snapshot.child("refrigerator").getValue().toString();
+                    String strLamp2 = snapshot.child("lampu_2").getValue().toString();
+                    String strWashing = snapshot.child("washing").getValue().toString();
 
-                ac = Integer.parseInt(strAC);
-                lamp1 = Integer.parseInt(strLamp1);
-                fan = Integer.parseInt(strFan);
-                refrigerator = Integer.parseInt(strKulkas);
-                lamp2 = Integer.parseInt(strLamp2);
+                    ac = Integer.parseInt(strAC);
+                    lamp1 = Integer.parseInt(strLamp1);
+                    fan = Integer.parseInt(strFan);
+                    refrigerator = Integer.parseInt(strKulkas);
+                    lamp2 = Integer.parseInt(strLamp2);
+                    washing = Integer.parseInt(strWashing);
+                }
 
                 if (ac == 1) {
                     ac = 0;
@@ -87,6 +91,13 @@ public class MainActivity extends BaseActivity {
                     lamp2 = 1;
                     deviceOff(imgLamp2, switchLamp2, stateLamp2);
                 }
+                if (washing == 1) {
+                    washing = 0;
+                    deviceOn(imgWashing, switchWashing, stateWashing);
+                } else {
+                    washing = 1;
+                    deviceOff(imgWashing, switchWashing, stateWashing);
+                }
             }
 
             @Override
@@ -115,56 +126,55 @@ public class MainActivity extends BaseActivity {
         switchAC.setOnClickListener(view -> {
             if (ac == 1) {
                 ac = 0;
-                deviceOn(imgAC, switchAC, stateAC);
-                dbReff.child("ac").setValue(1);
+                dbReff.child("ac").setValue(1).addOnSuccessListener(unused -> deviceOn(imgAC, switchAC, stateAC));
             } else {
                 ac = 1;
-                deviceOff(imgAC, switchAC, stateAC);
-                dbReff.child("ac").setValue(0);
+                dbReff.child("ac").setValue(0).addOnSuccessListener(unused -> deviceOff(imgAC, switchAC, stateAC));
             }
         });
         switchLamp1.setOnClickListener(view -> {
             if (lamp1 == 1) {
                 lamp1 = 0;
-                deviceOn(imgLamp1, switchLamp1, stateLamp1);
-                dbReff.child("lampu_1").setValue(1);
+                dbReff.child("lampu_1").setValue(1).addOnSuccessListener(unused -> deviceOn(imgLamp1, switchLamp1, stateLamp1));
             } else {
                 lamp1 = 1;
-                deviceOff(imgLamp1, switchLamp1, stateLamp1);
-                dbReff.child("lampu_1").setValue(0);
+                dbReff.child("lampu_1").setValue(0).addOnSuccessListener(unused -> deviceOff(imgLamp1, switchLamp1, stateLamp1));
             }
         });
         switchFan.setOnClickListener(view -> {
             if (fan == 1) {
                 fan = 0;
-                deviceOn(imgFan, switchFan, stateFan);
-                dbReff.child("fan").setValue(1);
+                dbReff.child("fan").setValue(1).addOnSuccessListener(unused -> deviceOn(imgFan, switchFan, stateFan));
             } else {
                 fan = 1;
-                deviceOff(imgFan, switchFan, stateFan);
-                dbReff.child("fan").setValue(0);
+                dbReff.child("fan").setValue(0).addOnSuccessListener(unused -> deviceOff(imgFan, switchFan, stateFan));
             }
         });
         switchRefrigerator.setOnClickListener(view -> {
             if (refrigerator == 1) {
                 refrigerator = 0;
-                deviceOn(imgRefrigerator, switchRefrigerator, stateRefrigerator);
-                dbReff.child("refrigerator").setValue(1);
+                dbReff.child("refrigerator").setValue(1).addOnSuccessListener(unused -> deviceOn(imgRefrigerator, switchRefrigerator, stateRefrigerator));
             } else {
                 refrigerator = 1;
-                deviceOff(imgRefrigerator, switchRefrigerator, stateRefrigerator);
-                dbReff.child("refrigerator").setValue(0);
+                dbReff.child("refrigerator").setValue(0).addOnSuccessListener(unused -> deviceOff(imgRefrigerator, switchRefrigerator, stateRefrigerator));
             }
         });
         switchLamp2.setOnClickListener(view -> {
             if (lamp2 == 1) {
                 lamp2 = 0;
-                deviceOn(imgLamp2, switchLamp2, stateLamp2);
-                dbReff.child("lampu_2").setValue(1);
+                dbReff.child("lampu_2").setValue(1).addOnSuccessListener(unused -> deviceOn(imgLamp2, switchLamp2, stateLamp2));
             } else {
                 lamp2 = 1;
-                deviceOff(imgLamp2, switchLamp2, stateLamp2);
-                dbReff.child("lampu_2").setValue(0);
+                dbReff.child("lampu_2").setValue(0).addOnSuccessListener(unused -> deviceOff(imgLamp2, switchLamp2, stateLamp2));
+            }
+        });
+        switchWashing.setOnClickListener(view -> {
+            if (washing == 1) {
+                washing = 0;
+                dbReff.child("washing").setValue(1).addOnSuccessListener(unused -> deviceOn(imgWashing, switchWashing, stateWashing));
+            } else {
+                washing = 1;
+                dbReff.child("washing").setValue(0).addOnSuccessListener(unused -> deviceOff(imgWashing, switchWashing, stateWashing));
             }
         });
     }
@@ -239,6 +249,14 @@ public class MainActivity extends BaseActivity {
                 dbReff.child("lampu_2").setValue(1);
             } else if (arrayList.get(0).equalsIgnoreCase("lampu 2 mati")) {
                 dbReff.child("lampu_2").setValue(0);
+            } else if (arrayList.get(0).equalsIgnoreCase("nyalakan mesin cuci")) {
+                dbReff.child("washing").setValue(1);
+            } else if (arrayList.get(0).equalsIgnoreCase("matikan mesin cuci")) {
+                dbReff.child("washing").setValue(0);
+            } else if (arrayList.get(0).equalsIgnoreCase("mesin cuci nyala")) {
+                dbReff.child("washing").setValue(1);
+            } else if (arrayList.get(0).equalsIgnoreCase("mesin cuci mati")) {
+                dbReff.child("washing").setValue(0);
             }
         }
     }
@@ -249,16 +267,23 @@ public class MainActivity extends BaseActivity {
         imgFan = findViewById(R.id.img_fan);
         imgRefrigerator = findViewById(R.id.img_refrigerator);
         imgLamp2 = findViewById(R.id.img_lamp2);
+        imgWashing = findViewById(R.id.img_washing);
         imgBtnVoice = findViewById(R.id.img_btn_voice);
         switchAC = findViewById(R.id.switch_ac);
         switchLamp1 = findViewById(R.id.switch_lamp1);
         switchFan = findViewById(R.id.switch_fan);
         switchRefrigerator = findViewById(R.id.switch_refrigerator);
         switchLamp2 = findViewById(R.id.switch_lamp2);
+        switchWashing = findViewById(R.id.switch_washing);
         stateAC = findViewById(R.id.state_ac);
         stateLamp1 = findViewById(R.id.state_lamp1);
         stateFan = findViewById(R.id.state_fan);
         stateRefrigerator = findViewById(R.id.state_refrigerator);
         stateLamp2 = findViewById(R.id.state_lamp2);
+        stateWashing = findViewById(R.id.state_washing);
+    }
+
+    public void InfoApp(View view) {
+        startActivity(new Intent(getApplicationContext(), InfoAppActivity.class));
     }
 }

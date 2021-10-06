@@ -11,4 +11,5 @@
     <color name="dark_icon">#555555</color>
     <color name="bg_white_blue">#F5F6FC</color>
     <color name="semi_transparent">#DEDEDE</color>
+    <color name="tint_splash">#F0F0F0</color>
 </resources>

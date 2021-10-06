@@ -4,4 +4,10 @@
     <string name="fan">Fan</string>
     <string name="lamp">Lamp</string>
     <string name="air_conditioner">Air Conditioner</string>
+    <string name="desc_app">Aplikasi ini dikembangkan oleh Muh Yassir Suryana, mahasiswa Jurusan Teknik Informatika dan Komputer angkatan 2016.
+        \n\nPengembangan aplikasi ini bertujuan untuk memenuhi persyaratan penyelesaian tugas akhir/skripsi di Program Studi Pendidikan Teknik Informatika
+        dan Komputer, Jurusan Teknik Informatika dan Komputer, Fakultas Teknik, Universitas Negeri Makassar.
+        \n\nDengan bantuan pembimbing yaitu Bapak Dr. Satria Gunawan Zain, M.T. dan Ibu Dr. Sanatang, M.T.
+        \n\nDiharapkan dengan adanya aplikasi ini akan memudahkan pengendalikan alat elektronik rumah tangga dari jarak jauh berbasis esp32 dan voice recognition.
+    </string>
 </resources>
