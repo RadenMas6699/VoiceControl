@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Voice Control</string>
+    <string name="refrigerator">Refrigerator</string>
+    <string name="fan">Fan</string>
+    <string name="lamp">Lamp</string>
+    <string name="air_conditioner">Air Conditioner</string>
 </resources>

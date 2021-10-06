@@ -112,6 +112,61 @@ public class MainActivity extends BaseActivity {
         imgBtnVoice.setOnClickListener(view -> {
             startVoiceInput();
         });
+        switchAC.setOnClickListener(view -> {
+            if (ac == 1) {
+                ac = 0;
+                deviceOn(imgAC, switchAC, stateAC);
+                dbReff.child("ac").setValue(1);
+            } else {
+                ac = 1;
+                deviceOff(imgAC, switchAC, stateAC);
+                dbReff.child("ac").setValue(0);
+            }
+        });
+        switchLamp1.setOnClickListener(view -> {
+            if (lamp1 == 1) {
+                lamp1 = 0;
+                deviceOn(imgLamp1, switchLamp1, stateLamp1);
+                dbReff.child("lampu_1").setValue(1);
+            } else {
+                lamp1 = 1;
+                deviceOff(imgLamp1, switchLamp1, stateLamp1);
+                dbReff.child("lampu_1").setValue(0);
+            }
+        });
+        switchFan.setOnClickListener(view -> {
+            if (fan == 1) {
+                fan = 0;
+                deviceOn(imgFan, switchFan, stateFan);
+                dbReff.child("fan").setValue(1);
+            } else {
+                fan = 1;
+                deviceOff(imgFan, switchFan, stateFan);
+                dbReff.child("fan").setValue(0);
+            }
+        });
+        switchRefrigerator.setOnClickListener(view -> {
+            if (refrigerator == 1) {
+                refrigerator = 0;
+                deviceOn(imgRefrigerator, switchRefrigerator, stateRefrigerator);
+                dbReff.child("refrigerator").setValue(1);
+            } else {
+                refrigerator = 1;
+                deviceOff(imgRefrigerator, switchRefrigerator, stateRefrigerator);
+                dbReff.child("refrigerator").setValue(0);
+            }
+        });
+        switchLamp2.setOnClickListener(view -> {
+            if (lamp2 == 1) {
+                lamp2 = 0;
+                deviceOn(imgLamp2, switchLamp2, stateLamp2);
+                dbReff.child("lampu_2").setValue(1);
+            } else {
+                lamp2 = 1;
+                deviceOff(imgLamp2, switchLamp2, stateLamp2);
+                dbReff.child("lampu_2").setValue(0);
+            }
+        });
     }
 
     //perintah suara
@@ -128,13 +183,13 @@ public class MainActivity extends BaseActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1 && resultCode == RESULT_OK && data != null) {
             ArrayList<String> arrayList = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-            if (arrayList.get(0).equalsIgnoreCase("nyalakan AC")) {
+            if (arrayList.get(0).equalsIgnoreCase("nyalakan ac")) {
                 dbReff.child("ac").setValue(1);
-            } else if (arrayList.get(0).equalsIgnoreCase("matikan AC")) {
+            } else if (arrayList.get(0).equalsIgnoreCase("matikan ac")) {
                 dbReff.child("ac").setValue(0);
-            } else if (arrayList.get(0).equalsIgnoreCase("AC nyala")) {
+            } else if (arrayList.get(0).equalsIgnoreCase("ac nyala")) {
                 dbReff.child("ac").setValue(1);
-            } else if (arrayList.get(0).equalsIgnoreCase("AC mati")) {
+            } else if (arrayList.get(0).equalsIgnoreCase("ac mati")) {
                 dbReff.child("ac").setValue(0);
             } else if (arrayList.get(0).equalsIgnoreCase("nyalakan lampu satu")) {
                 dbReff.child("lampu_1").setValue(1);
@@ -194,7 +249,7 @@ public class MainActivity extends BaseActivity {
         imgFan = findViewById(R.id.img_fan);
         imgRefrigerator = findViewById(R.id.img_refrigerator);
         imgLamp2 = findViewById(R.id.img_lamp2);
-        imgBtnVoice = findViewById(R.id.imgBtnVoice);
+        imgBtnVoice = findViewById(R.id.img_btn_voice);
         switchAC = findViewById(R.id.switch_ac);
         switchLamp1 = findViewById(R.id.switch_lamp1);
         switchFan = findViewById(R.id.switch_fan);
