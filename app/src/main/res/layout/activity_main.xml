@@ -23,24 +23,46 @@
                 android:background="@drawable/bg_header"
                 android:paddingTop="16dp">
 
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_header" />
+
                 <TextView
+                    android:id="@+id/name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:text="@string/app_name"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="36dp"
+                    android:gravity="center"
+                    android:text="Hello Yassir,"
                     android:textColor="@color/white"
-                    android:textSize="18sp"
+                    android:textSize="24sp"
                     android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/hello"
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/name"
+                    android:layout_marginStart="24dp"
+                    android:fontFamily="@font/reguler"
+                    android:text="Here's your electronic device control"
+                    android:textColor="#DCDCDC"
+                    android:textSize="16sp" />
 
                 <ImageButton
                     android:id="@+id/img_info"
-                    android:onClick="InfoApp"
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="16dp"
                     android:background="@android:color/transparent"
                     android:foreground="?attr/selectableItemBackground"
+                    android:onClick="InfoApp"
                     android:padding="2dp"
                     android:src="@drawable/ic_info" />
             </RelativeLayout>
