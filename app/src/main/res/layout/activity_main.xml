@@ -3,7 +3,215 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg_white_blue"
     tools:context=".ui.MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    style="@style/card_item"
+                    android:layout_marginHorizontal="16dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:id="@+id/img_ac"
+                            style="@style/icon_item"
+                            android:src="@drawable/ic_air_conditioner" />
+
+                        <TextView
+                            android:id="@+id/title_ac"
+                            style="@style/title_item"
+                            android:text="@string/air_conditioner" />
+
+                        <ImageView
+                            android:id="@+id/state_ac"
+                            style="@style/state_power"
+                            android:src="@drawable/on_power" />
+
+                        <ImageButton
+                            android:id="@+id/switch_ac"
+                            style="@style/switch_power"
+                            android:src="@drawable/ic_power_on" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/card_item"
+                    android:layout_marginHorizontal="16dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:id="@+id/img_lamp1"
+                            style="@style/icon_item"
+                            android:src="@drawable/ic_light_bulb" />
+
+                        <TextView
+                            android:id="@+id/title_lamp1"
+                            style="@style/title_item"
+                            android:text="@string/lamp" />
+
+                        <ImageView
+                            android:id="@+id/state_lamp1"
+                            style="@style/state_power"
+                            android:src="@drawable/on_power" />
+
+                        <ImageButton
+                            android:id="@+id/switch_lamp1"
+                            style="@style/switch_power"
+                            android:src="@drawable/ic_power_on" />
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    style="@style/card_item"
+                    android:layout_marginHorizontal="16dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:id="@+id/img_fan"
+                            style="@style/icon_item"
+                            android:padding="3dp"
+                            android:src="@drawable/ic_fan" />
+
+                        <TextView
+                            android:id="@+id/title_fan"
+                            style="@style/title_item"
+                            android:text="@string/fan" />
+
+                        <ImageView
+                            android:id="@+id/state_fan"
+                            style="@style/state_power"
+                            android:src="@drawable/on_power" />
+
+                        <ImageButton
+                            android:id="@+id/switch_fan"
+                            style="@style/switch_power"
+                            android:src="@drawable/ic_power_on" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    style="@style/card_item"
+                    android:layout_marginHorizontal="16dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:id="@+id/img_refrigerator"
+                            style="@style/icon_item"
+                            android:src="@drawable/ic_kulkas" />
+
+                        <TextView
+                            android:id="@+id/title_refrigerator"
+                            style="@style/title_item"
+                            android:text="@string/refrigerator" />
+
+                        <ImageView
+                            android:id="@+id/state_refrigerator"
+                            style="@style/state_power"
+                            android:src="@drawable/on_power" />
+
+                        <ImageButton
+                            android:id="@+id/switch_refrigerator"
+                            style="@style/switch_power"
+                            android:src="@drawable/ic_power_on" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    style="@style/card_item"
+                    android:layout_marginHorizontal="16dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:id="@+id/img_lamp2"
+                            style="@style/icon_item"
+                            android:padding="2dp"
+                            android:src="@drawable/ic_light_cfl" />
+
+                        <TextView
+                            android:id="@+id/title_lamp2"
+                            style="@style/title_item"
+                            android:text="@string/lamp" />
+
+                        <ImageView
+                            android:id="@+id/state_lamp2"
+                            style="@style/state_power"
+                            android:src="@drawable/on_power" />
+
+                        <ImageButton
+                            android:id="@+id/switch_lamp2"
+                            style="@style/switch_power"
+                            android:src="@drawable/ic_power_on" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
     <ImageButton
         android:id="@+id/imgBtnVoice"
@@ -14,6 +222,6 @@
         android:layout_marginBottom="16dp"
         android:background="@android:color/transparent"
         android:scaleType="fitXY"
-        android:src="@drawable/voice" />
+        android:src="@drawable/ic_voice" />
 
 </RelativeLayout>

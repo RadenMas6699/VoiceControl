@@ -1,20 +1,21 @@
 {
   "project_info": {
-    "project_number": "376115546326",
-    "project_id": "voicecontrol-fe913",
-    "storage_bucket": "voicecontrol-fe913.appspot.com"
+    "project_number": "765199206127",
+    "firebase_url": "https://voice-recog-98be2-default-rtdb.firebaseio.com",
+    "project_id": "voice-recog-98be2",
+    "storage_bucket": "voice-recog-98be2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:376115546326:android:927812ff930a8519dd2177",
+        "mobilesdk_app_id": "1:765199206127:android:a6bbe71ebd8412ae53bd1a",
         "android_client_info": {
           "package_name": "com.radenmas.voice_control"
         }
       },
       "oauth_client": [
         {
-          "client_id": "376115546326-u877p0vpj6558mp6o5gbfkvc50qopbis.apps.googleusercontent.com",
+          "client_id": "765199206127-ufut3a6vdkqooifvlvuf59kufj592t5p.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.radenmas.voice_control",
@@ -22,20 +23,20 @@
           }
         },
         {
-          "client_id": "376115546326-sivhcul3re3msvmfnkgi809ngikv0ndl.apps.googleusercontent.com",
+          "client_id": "765199206127-k7u5cdsj47tkbdam1as2qsibb5jq9ama.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAIgseCc0jZsLFPoUFXORUr2ve0os68ALs"
+          "current_key": "AIzaSyDaKF4lT-_4ggNevZPJVv9osCtQou_ZzYk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "376115546326-sivhcul3re3msvmfnkgi809ngikv0ndl.apps.googleusercontent.com",
+              "client_id": "765199206127-k7u5cdsj47tkbdam1as2qsibb5jq9ama.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
