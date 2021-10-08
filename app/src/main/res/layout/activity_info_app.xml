@@ -16,13 +16,13 @@
 
     <ImageButton
         android:id="@+id/img_back"
-        android:onClick="Back"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:background="@android:color/transparent"
         android:foreground="?attr/selectableItemBackground"
+        android:onClick="Back"
         android:src="@drawable/ic_back" />
 
     <ImageView
@@ -81,6 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:scrollbars="none"
-            android:text="@string/desc_app" />
+            android:text="@string/desc_app"
+            android:textColor="@color/black" />
     </LinearLayout>
 </RelativeLayout>
