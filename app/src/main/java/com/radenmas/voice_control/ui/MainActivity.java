@@ -1,5 +1,6 @@
 package com.radenmas.voice_control.ui;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.speech.RecognizerIntent;
@@ -285,5 +286,14 @@ public class MainActivity extends BaseActivity {
 
     public void InfoApp(View view) {
         startActivity(new Intent(getApplicationContext(), InfoAppActivity.class));
+    }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(MainActivity.this)
+                .setMessage("Ingin keluar dari aplikasi?")
+                .setPositiveButton("Tidak", (dialogInterface, i) -> dialogInterface.dismiss())
+                .setNegativeButton("Ya", (dialogInterface, i) -> finish())
+                .show();
     }
 }
