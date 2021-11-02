@@ -126,7 +126,7 @@
                         <TextView
                             android:id="@+id/title_lamp1"
                             style="@style/title_item"
-                            android:text="@string/lamp" />
+                            android:text="@string/lamp1" />
 
                         <ImageView
                             android:id="@+id/state_lamp1"
@@ -244,7 +244,7 @@
                         <TextView
                             android:id="@+id/title_lamp2"
                             style="@style/title_item"
-                            android:text="@string/lamp" />
+                            android:text="@string/lamp2" />
 
                         <ImageView
                             android:id="@+id/state_lamp2"

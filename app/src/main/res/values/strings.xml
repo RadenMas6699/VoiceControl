@@ -2,7 +2,8 @@
     <string name="app_name">Voice Control</string>
     <string name="refrigerator">Refrigerator</string>
     <string name="fan">Fan</string>
-    <string name="lamp">Lamp</string>
+    <string name="lamp1">Lamp 1</string>
+    <string name="lamp2">Lamp 2</string>
     <string name="air_conditioner">Air Conditioner</string>
     <string name="desc_app">Aplikasi ini dikembangkan oleh Muh Yassir Suryana, mahasiswa Jurusan Teknik Informatika dan Komputer angkatan 2016.
         \n\nPengembangan aplikasi ini bertujuan untuk memenuhi persyaratan penyelesaian tugas akhir/skripsi di Program Studi Pendidikan Teknik Informatika
